@@ -1,0 +1,14 @@
+<div class="root">
+  <div *ngFor="let coin of coinsToDisplay">
+    <div class="coin-container" (click)="openCoinDetails(coin.id)">
+      <p class="description">
+        <span class="identifier">ID:</span>
+        <span class="value"> {{ coin.id }}</span>
+        <span class="identifier">Name:</span>
+        <span class="value"> {{ coin.name }}</span>
+        <span class="identifier">Symbol:</span>
+        <span class="value"> {{ coin.symbol }}</span>
+      </p>
+    </div>
+  </div>
+</div>

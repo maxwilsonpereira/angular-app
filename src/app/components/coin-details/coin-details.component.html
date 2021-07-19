@@ -1,0 +1,33 @@
+<div class="root">
+  <button class="button margin-top" routerLink="/">Back to Home</button>
+  <br />
+  <div class="img-container">
+    <img class="coin-img" src="{{ coinDetails.image.small }}" alt="" />
+  </div>
+  <div class="description-container">
+    <p class="description">
+      <span class="identifier">Symbol:</span> {{ coinDetails.symbol }}
+    </p>
+
+    <p class="description">
+      <span class="identifier">Name:</span> {{ coinDetails.id }}
+    </p>
+    <p class="description"><span class="identifier">Categories:</span></p>
+    <p class="description" *ngFor="let category of coinDetails.categories">
+      {{ category }}
+    </p>
+    <p class="description">
+      <span class="identifier">Homepage:</span>
+      {{ coinDetails.links.homepage[0] }}
+    </p>
+    <p class="description">
+      <span class="identifier">Genesis Date:</span>
+      {{ coinDetails.genesis_date }}
+      <span *ngIf="!coinDetails.genesis_date">Not available for this coin</span>
+    </p>
+    <p class="description">
+      <span class="identifier">Current Price:</span>
+      {{ coinDetails.market_data.current_price.eur }} euros
+    </p>
+  </div>
+</div>

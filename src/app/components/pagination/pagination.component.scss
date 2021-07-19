@@ -1,0 +1,104 @@
+// VARIABLES:
+@import "../../styles/variables.scss";
+
+.pagination-root {
+  display: inline;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.page-changer-icon {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 30px;
+  transform: translate(0px, 2px);
+  cursor: pointer;
+  @media (max-width: $mobileView) {
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 22px;
+  }
+}
+.page-number-div {
+  display: inline-block;
+  text-align: center;
+  width: 60px;
+  @media (max-width: $mobileView) {
+    width: 35px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
+.page-number {
+  display: inline;
+  cursor: pointer;
+  font-size: 25px;
+  @media (max-width: $mobileView) {
+    font-size: 16px;
+  }
+}
+.page-number-div.active {
+  background-color: #55a24f;
+  padding: 5px 0;
+  border-radius: 3px;
+}
+.page-changer-icon.active {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.filters-container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: $mobileView) {
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+}
+.page-input {
+  padding: 10px;
+  width: 100px;
+  border-radius: 3px 0 0 3px;
+  margin-left: 10px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  border: 1px solid white;
+  @media (max-width: $mobileView) {
+    width: 60px;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+}
+.btn-page {
+  padding: 10px;
+  margin-left: 2px;
+  background: #55a24f;
+  border-radius: 0 3px 3px 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Museo-Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 15px;
+  border: 1px solid #55a24f;
+  transition: 0.1s;
+  cursor: pointer;
+  &:hover {
+    background: none;
+  }
+  @media (max-width: $mobileView) {
+    font-size: 12px;
+  }
+}
+.page-div {
+  display: inline;
+
+  @media (max-width: $mobileView) {
+    display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+}
+.btn-page.active {
+  pointer-events: none;
+  opacity: 0.6;
+}

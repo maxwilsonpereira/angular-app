@@ -1,0 +1,46 @@
+// VARIABLES:
+@import "../../styles/variables.scss";
+// CLASSES:
+@import "../../styles/classes.scss";
+
+.root {
+  position: relative;
+  max-width: $maxWidthContent;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+  color: white;
+}
+.margin-top {
+  margin-top: 40px;
+}
+.coins {
+  color: white;
+}
+.button {
+  @include buttonMain();
+}
+.description-container {
+  padding: 20px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.img-container {
+  min-height: 180px;
+}
+.coin-img {
+  width: 120px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+.description {
+  font-size: 20px;
+  margin-bottom: 10px;
+  @media (max-width: $mobileView) {
+    font-size: 18px;
+  }
+}
+.identifier {
+  color: #55a24f;
+  margin-right: 3px;
+}

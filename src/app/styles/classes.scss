@@ -1,0 +1,41 @@
+@mixin buttonMain() {
+  display: inline;
+  cursor: pointer;
+  margin-right: 10px;
+  background: #55a24f;
+  color: #ffffff;
+  text-decoration: none;
+  width: 170px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  font-family: "Museo-Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 15px;
+  border: 1px solid #55a24f;
+  transition: 0.3s;
+  &:hover {
+    background: none;
+  }
+  @media (max-width: $mobileView) {
+    width: 100px;
+    font-size: 12px;
+  }
+}
+@mixin scrollbarStylle() {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  // &::-webkit-scrollbar-track {
+  //   background: red;
+  // }
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: rgba(255, 255, 255, 0.8);
+    scrollbar-track-color: rgba(255, 255, 255, 0.8);
+  }
+}

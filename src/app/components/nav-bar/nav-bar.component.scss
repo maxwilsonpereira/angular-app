@@ -1,0 +1,27 @@
+// VARIABLES:
+@import "../../styles/variables.scss";
+
+.nav {
+  &-bar {
+    // position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+
+  &-logo {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    width: 250px;
+    margin-left: 40px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

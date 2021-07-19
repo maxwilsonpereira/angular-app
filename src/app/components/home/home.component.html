@@ -1,0 +1,45 @@
+<div class="root">
+  <div *ngIf="loading" class="loading-container">
+    <mat-progress-bar
+      class="progress-bar"
+      mode="indeterminate"
+    ></mat-progress-bar>
+    <p class="subtitle">Fetching data from CoinGecko API</p>
+  </div>
+
+  <div class="content" *ngIf="!loading">
+    <div class="btns-container">
+      <button class="button" (click)="sortById()">Sort by Id</button>
+      <button class="button" (click)="sortByName()">Sort by Name</button>
+      <button class="button" (click)="sortBySymbol()">Sort by Sylbol</button>
+    </div>
+
+    <div class="filters-container">
+      <div class="name-input">
+        <input
+          class="filter-input"
+          placeholder="Filter by name"
+          (keyup)="filterByName($event)"
+        />
+      </div>
+      <div class="symbol-input">
+        <input
+          class="filter-input"
+          placeholder="Filter by symbol"
+          (keyup)="filterBySymbol($event)"
+        />
+      </div>
+    </div>
+
+    <p class="title">Listing the coins by response order:</p>
+    <p class="subtitle">click on the coin for detail</p>
+
+    <app-pagination
+      [pageNumber]="pageNumber"
+      [totalPages]="totalPages"
+      (pageNumberChanged)="setPageNumber($event)"
+    ></app-pagination>
+    <app-coin-list [coinsToDisplay]="coinsToDisplay"></app-coin-list>
+    <br />
+  </div>
+</div>

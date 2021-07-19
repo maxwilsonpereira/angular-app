@@ -1,0 +1,117 @@
+// VARIABLES:
+@import "../../styles/variables.scss";
+// CLASSES:
+@import "../../styles/classes.scss";
+// ANIMATIONS:
+@import "../../styles/animations.scss";
+
+.root {
+  position: relative;
+  max-width: $maxWidthContent;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 40px;
+  color: white;
+  @media (max-width: $mobileView) {
+    padding: 0 20px;
+  }
+}
+.content {
+  margin-bottom: 40px;
+}
+.loading-container {
+  margin-top: 150px;
+  padding: 100px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  @include fadeInAnimation();
+}
+.progress-bar {
+  margin-bottom: 40px;
+}
+.coins {
+  color: white;
+}
+.coin-grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: center;
+  @media (max-width: 1100px) {
+    grid-template-columns: 48% 48%;
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: 100%;
+  }
+}
+.coin-card {
+  height: 180px;
+  overflow-y: scroll;
+  padding: 30px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 0.3s;
+  @include scrollbarStylle();
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+.title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: normal;
+  @media (max-width: $mobileView) {
+    font-size: 22px;
+  }
+}
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: #55a24f;
+  @media (max-width: $mobileView) {
+    font-size: 16px;
+  }
+}
+.filters-container {
+  display: flex;
+  @media (max-width: $mobileView) {
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+}
+.filter-input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  border: 1px solid white;
+}
+.name-input {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.progress-bar-search {
+  margin-top: 5px;
+  max-width: 333px;
+}
+.btns-container {
+  margin: 40px 0 20px 0;
+}
+.button {
+  @include buttonMain();
+}
+.progress-bar-button {
+  width: 170px;
+  margin-top: 5px;
+  max-width: 333px;
+  @media (max-width: $mobileView) {
+    width: 100px;
+    font-size: 12px;
+  }
+}

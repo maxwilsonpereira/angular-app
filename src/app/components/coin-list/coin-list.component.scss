@@ -1,0 +1,33 @@
+// VARIABLES:
+@import "../../styles/variables.scss";
+
+.root {
+  display: inline-block;
+  margin-top: 15px;
+  width: 100%;
+}
+.coin-container {
+  padding: 10px 20px 1px 20px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+.description {
+  font-size: 20px;
+  line-height: 140%;
+  @media (max-width: $mobileView) {
+    font-size: 18px;
+  }
+}
+.identifier {
+  color: #55a24f;
+  margin-right: 3px;
+}
+.value {
+  margin-right: 20px;
+}

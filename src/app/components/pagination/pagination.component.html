@@ -1,0 +1,123 @@
+<div class="filters-container">
+  <div class="pagination-root">
+    <div
+      (click)="setPageNumber(pageNumber - 1)"
+      class="page-changer-icon"
+      [class.active]="pageNumber < 1"
+    >
+      &#60;
+    </div>
+
+    <div
+      *ngIf="pageNumber - 2 > 0"
+      (click)="setPageNumber(pageNumber - 3)"
+      class="page-number-div"
+    >
+      <p class="page-number">{{ pageNumber - 2 }}</p>
+    </div>
+    <div
+      *ngIf="pageNumber - 1 > 0"
+      (click)="setPageNumber(pageNumber - 2)"
+      class="page-number-div"
+    >
+      <p class="page-number">{{ pageNumber - 1 }}</p>
+    </div>
+    <div
+      *ngIf="pageNumber > 0"
+      (click)="setPageNumber(pageNumber - 1)"
+      class="page-number-div"
+    >
+      <p class="page-number">{{ pageNumber }}</p>
+    </div>
+
+    <!-- CURRENT PAGE: -->
+    <div class="page-number-div" [class.active]="pageNumber + 1">
+      <p class="page-number">{{ pageNumber + 1 }}</p>
+    </div>
+
+    <div (click)="setPageNumber(pageNumber + 1)" class="page-number-div">
+      <p *ngIf="pageNumber < totalPages" class="page-number">
+        {{ pageNumber + 2 }}
+      </p>
+    </div>
+    <div (click)="setPageNumber(pageNumber + 2)" class="page-number-div">
+      <p *ngIf="pageNumber + 2 < totalPages" class="page-number">
+        {{ pageNumber + 3 }}
+      </p>
+    </div>
+    <div (click)="setPageNumber(pageNumber + 3)" class="page-number-div">
+      <p *ngIf="pageNumber + 3 < totalPages" class="page-number">
+        {{ pageNumber + 4 }}
+      </p>
+    </div>
+
+    <div
+      *ngIf="pageNumber - 2 < 0"
+      (click)="setPageNumber(pageNumber + 4)"
+      class="page-number-div"
+    >
+      <p *ngIf="pageNumber + 4 < totalPages" class="page-number">
+        {{ pageNumber + 5 }}
+      </p>
+    </div>
+    <div
+      *ngIf="pageNumber === 2"
+      (click)="setPageNumber(pageNumber + 4)"
+      class="page-number-div"
+    >
+      <p *ngIf="pageNumber + 4 < totalPages" class="page-number">
+        {{ pageNumber + 5 }}
+      </p>
+    </div>
+    <div
+      *ngIf="pageNumber - 1 < 0"
+      (click)="setPageNumber(pageNumber + 5)"
+      class="page-number-div"
+    >
+      <p *ngIf="pageNumber + 5 < totalPages" class="page-number">
+        {{ pageNumber + 6 }}
+      </p>
+    </div>
+    <div
+      *ngIf="pageNumber === 1"
+      (click)="setPageNumber(pageNumber + 5)"
+      class="page-number-div"
+    >
+      <p *ngIf="pageNumber + 5 < totalPages" class="page-number">
+        {{ pageNumber + 6 }}
+      </p>
+    </div>
+    <div
+      *ngIf="pageNumber <= 0"
+      (click)="setPageNumber(pageNumber + 6)"
+      class="page-number-div"
+    >
+      <p *ngIf="pageNumber + 6 < totalPages" class="page-number">
+        {{ pageNumber + 7 }}
+      </p>
+    </div>
+
+    <div
+      (click)="setPageNumber(pageNumber + 1)"
+      class="page-changer-icon"
+      [class.active]="pageNumber + 2 > totalPages"
+    >
+      &#62;
+    </div>
+  </div>
+  <div class="page-div">
+    <input
+      class="page-input"
+      placeholder="Page"
+      type="number"
+      (keyup)="setPage($event)"
+    />
+    <button
+      class="btn-page"
+      [class.active]="!page || page < 1 || pageNumber + 1 == page"
+      (click)="goToPage()"
+    >
+      Go
+    </button>
+  </div>
+</div>
