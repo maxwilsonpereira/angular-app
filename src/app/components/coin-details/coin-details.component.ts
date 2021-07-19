@@ -22,6 +22,7 @@ export class CoinDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.coinId = params['id'];
       this.getCoinDetails(this.coinId);
