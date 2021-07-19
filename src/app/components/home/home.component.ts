@@ -18,8 +18,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   public pageNumber: number = 0;
   private itemsPerPage = 20;
   public totalPages: number = 0;
-  public nameFilter = 'Filter by name';
-  public symbolFilter = 'Filter by symbol';
 
   constructor(private httpService: HttpService) {}
 
