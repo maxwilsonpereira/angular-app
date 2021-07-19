@@ -40,11 +40,35 @@
         {{ pageNumber + 2 }}
       </p>
     </div>
-    <div (click)="setPageNumber(pageNumber + 2)" class="page-number-div">
-      <p *ngIf="pageNumber + 2 < totalPages" class="page-number">
+
+    <div
+      *ngIf="pageNumber + 2 < totalPages"
+      (click)="setPageNumber(pageNumber + 2)"
+      class="page-number-div"
+    >
+      <p class="page-number">
         {{ pageNumber + 3 }}
       </p>
     </div>
+
+    <div
+      *ngIf="pageNumber + 3 == totalPages && pageNumber + 2 < totalPages"
+      (click)="setPageNumber(pageNumber + 4)"
+      class="page-number-div"
+    >
+      <p *ngIf="pageNumber + 2 < totalPages" class="page-number">
+        {{ pageNumber + 4 }}
+      </p>
+    </div>
+
+    <div
+      *ngIf="pageNumber + 2 == totalPages"
+      (click)="setPageNumber(pageNumber + 2)"
+      class="page-number-div"
+    >
+      <p class="page-number">{{ pageNumber + 3 }}</p>
+    </div>
+
     <div (click)="setPageNumber(pageNumber + 3)" class="page-number-div">
       <p *ngIf="pageNumber + 3 < totalPages" class="page-number">
         {{ pageNumber + 4 }}
