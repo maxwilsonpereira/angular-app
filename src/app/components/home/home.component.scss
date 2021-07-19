@@ -17,7 +17,7 @@
   }
 }
 .content {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .loading-container {
   margin-top: 150px;
@@ -26,6 +26,10 @@
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
   @include fadeInAnimation();
+  @media (max-width: $mobileView) {
+    margin-top: 120px;
+    padding: 20px;
+  }
 }
 .progress-bar {
   margin-bottom: 40px;
@@ -62,10 +66,11 @@
 .title {
   font-size: 30px;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 16px;
   font-weight: normal;
+  line-height: 120%;
   @media (max-width: $mobileView) {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 .subtitle {
@@ -74,7 +79,7 @@
   font-weight: normal;
   color: #55a24f;
   @media (max-width: $mobileView) {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .filters-container {
