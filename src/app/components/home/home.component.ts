@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Coin } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
@@ -9,6 +15,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  @Output() toggledChange: EventEmitter<string> = new EventEmitter<string>();
   public coins: Array<Coin> = [];
   public coinsToDisplay: Array<Coin> = [];
   public coinsToDisplayMemory: Array<Coin> = [];
@@ -18,6 +25,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   public pageNumber: number = 0;
   private itemsPerPage = 20;
   public totalPages: number = 0;
+  public filterByNameString = '';
+  public filterBySymbolString = '';
 
   constructor(private httpService: HttpService) {}
 
@@ -38,6 +47,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   setPageNumber(pageNumber: number): void {
+    this.filterBySymbolString = '';
+    this.toggledChange.emit(this.filterBySymbolString);
+    this.filterByNameString = '';
+    this.toggledChange.emit(this.filterByNameString);
     this.pageNumber = pageNumber;
     const start = this.pageNumber * this.itemsPerPage;
     const end = start + this.itemsPerPage;
@@ -59,6 +72,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   filterByName(event: any): void {
+    this.filterBySymbolString = '';
+    this.toggledChange.emit(this.filterBySymbolString);
     const auxArray = this.coinsToDisplayMemory.reduce(
       (acum: any, current: any) => {
         if (
@@ -73,6 +88,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   filterBySymbol(event: any): void {
+    this.filterByNameString = '';
+    this.toggledChange.emit(this.filterByNameString);
     const auxArray = this.coinsToDisplayMemory.reduce(
       (acum: any, current: any) => {
         if (

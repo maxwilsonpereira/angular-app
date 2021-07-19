@@ -20,6 +20,7 @@
           class="filter-input"
           placeholder="Filter by name"
           (keyup)="filterByName($event)"
+          [(ngModel)]="filterByNameString"
         />
       </div>
       <div class="symbol-input">
@@ -27,6 +28,7 @@
           class="filter-input"
           placeholder="Filter by symbol"
           (keyup)="filterBySymbol($event)"
+          [(ngModel)]="filterBySymbolString"
         />
       </div>
     </div>
