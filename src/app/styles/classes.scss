@@ -17,8 +17,9 @@
     background: none;
   }
   @media (max-width: $mobileView) {
-    width: 100px;
-    font-size: 12px;
+    width: 90px;
+    margin-right: 8px;
+    font-size: 11px;
   }
 }
 @mixin scrollbarStylle() {
